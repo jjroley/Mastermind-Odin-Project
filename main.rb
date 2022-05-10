@@ -47,6 +47,7 @@ class MastermindLogic
 end
 
 class ComputerSolver
+  @@order = %w[white red yellow green blue black]
   def initialize(game) 
     @game = game
   end
@@ -64,6 +65,13 @@ class ComputerSolver
         break;
       end
     end
+  end
+  def get_next_pattern(prev_pattern, res)
+    if res[0] + res[1] == 4
+      return
+    end
+    new_pattern = prev_pattern[0..res[0]]
+    
   end
 end
 
